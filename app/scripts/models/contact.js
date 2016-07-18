@@ -4,9 +4,6 @@ import settings from '../settings'
 
 const Contact = Backbone.Model.extend({
   idAttribute: '_id',
-  defaults: {
-    name: ''
-  },
   urlRoot: `https://baas.kinvey.com/appdata/${settings.appKey}/contacts`,
 })
 

@@ -7,7 +7,6 @@ import settings from './settings'
 import renderLogin from './views/loginView'
 import renderSignup from './views/signupView'
 import renderContacts from './views/contactsView'
-// import contacts from './collections/contacts'
 
 import renderHeader from './views/headerView'
 import renderFooter from './views/footerView'
