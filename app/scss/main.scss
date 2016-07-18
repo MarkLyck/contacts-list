@@ -5,6 +5,23 @@
 @import "login";
 @import "contacts";
 
+body {
+  font-weight: 100;
+}
+
+button, input {
+  outline: none;
+}
+button {
+  border: none;
+  color: #fff;
+  background: darken($primary-color, 5%);
+  &:hover {
+    background: darken($primary-color, 10%);
+    cursor: pointer;
+  }
+}
+
 .modal-container {
   width: 100vw;
   height: 100vh;

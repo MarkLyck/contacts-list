@@ -33,21 +33,14 @@ function renderSignup() {
         contentType: 'application/json',
         data: JSON.stringify({
           username: username,
-          password: password,
-          contacts: []
-          // contactsAdvanced: [{
-          //   name: 'test1',
-          //   number: 'blahblah'
-          // },
-          // {
-          //   name: 'test2',
-          //   number: 'blahblahblah'
-          // },]
+          password: password
         }),
         success: function(response) {
           store.session.username = username
           store.session.authtoken = response._kmd.authtoken;
           store.session._id = response._id
+
+          sessionStorage.session = JSON.stringify(store.session)
 
           router.navigate('contacts', {trigger:true})
           console.log('SIGNED UP')

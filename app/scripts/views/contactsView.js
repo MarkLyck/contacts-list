@@ -1,17 +1,26 @@
 import $ from 'jquery'
 import store from '../store'
+import settings from '../settings'
 import contacts from '../collections/contacts'
+import renderFooter from './footerView'
 
 function renderContacts() {
+  $.ajax(`https://baas.kinvey.com/appdata/${settings.appKey}/contacts/_count`).then(function(response) {
+    console.log('response: ', response);
+    store.contacts.refsTotal = response.count
+    if (response.count > 10) {
+      renderFooter()
+    }
+  })
+
   let $contacts = $(`
     <ul id="contact-list">
 
     </ul>
   `)
 
-  console.log(contacts);
-  contacts.each(function(contact) {
-    console.log('contact: ', contact);
+
+  store.contacts.data.each(function(contact) {
     let $li = $(`
         <li>
           <h3>${contact.get('name')}</h3>
@@ -22,17 +31,6 @@ function renderContacts() {
       `)
       $contacts.append($li)
   })
-  // store.session.contacts.forEach(contact => {
-  //   let $li = $(`
-  //     <li>
-  //       <h3>${contact.name}</h3>
-  //       <h5>${contact.nick}</h5>
-  //       <h5>${contact.email}</h5>
-  //       <h5>${contact.phone}</h5>
-  //     </li>
-  //   `)
-  //   $contacts.append($li)
-  // })
 
   return $contacts
 }

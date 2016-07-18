@@ -45,6 +45,8 @@ function renderLogin() {
           store.session.contacts = response.contacts
           store.session._id = response._id
 
+          sessionStorage.session = JSON.stringify(store.session)
+
           router.navigate('contacts', {trigger:true})
         },
         error: function(response) {

@@ -4,10 +4,10 @@ import settings from '../settings'
 
 
 let Contacts = Backbone.Collection.extend({
-  url: `https://baas.kinvey.com/appdata/${settings.appKey}/contacts`,
+  url: `https://baas.kinvey.com/appdata/${settings.appKey}/contacts/${settings.pagination}`,
   model: Contact
 });
 
-let contactCollection = new Contacts()
+// let contactCollection = new Contacts()
 
-export default contactCollection
+export default Contacts
