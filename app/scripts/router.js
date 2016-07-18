@@ -1,9 +1,12 @@
 import $ from 'jquery'
 import Backbone from 'backbone'
 
+import store from './store'
+
 import renderLogin from './views/loginView'
 import renderSignup from './views/signupView'
 import renderContacts from './views/contactsView'
+import contacts from './collections/contacts'
 
 import renderHeader from './views/headerView'
 import renderFooter from './views/footerView'
@@ -32,11 +35,15 @@ const Router = Backbone.Router.extend({
     $container.empty().append($signupModal)
   },
   contacts: function() {
-    console.log('RENDER CONTACTS');
-    let $contacts = renderContacts()
+      console.log('RENDER CONTACTS');
     let $header = renderHeader()
     let $footer = renderFooter()
-    $container.empty().append($header).append($contacts).append($footer)
+    $container.empty().append($header)
+
+    contacts.fetch({success: function() {
+      let $contacts = renderContacts()
+      $container.append($contacts).append($footer)
+    }})
   },
   newContact: function() {
     console.log('RENDER NEW CONTACT FORM');

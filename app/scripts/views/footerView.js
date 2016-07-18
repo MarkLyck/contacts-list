@@ -7,6 +7,9 @@ function renderFooter() {
       <button id="next-page" type="button" name="button">Next</button>
     </footer>
   `)
+  $footer.find('#next-page').on('click', function() {
+    
+  })
   return $footer
 }
 

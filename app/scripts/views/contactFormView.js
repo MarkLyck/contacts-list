@@ -1,7 +1,9 @@
 import $ from 'jquery'
+import Backbone from 'backbone'
 import store from '../store'
 import settings from '../settings'
 import router from '../router'
+import contacts from '../collections/contacts'
 
 function renderContactForm() {
   let $contactForm = $(`
@@ -25,29 +27,30 @@ function renderContactForm() {
   $contactForm.find('#create-contact-btn').on('click', function() {
     console.log('CLICKED CREATE');
     if ($cName.val() !== '') {
-      let newContact = {
+
+      contacts.create({
         name: $cName.val(),
         nick: $cNick.val(),
         email: $cEmail.val(),
         phone: $cPhone.val()
-      }
-      store.session.contacts.push(newContact)
+      })
+
       router.navigate('contacts', {trigger:true})
 
-      $.ajax({
-        type: 'PUT',
-        url: `https://baas.kinvey.com/user/${settings.appKey}/${store.session._id}`,
-        contentType: 'application/json',
-        data: JSON.stringify({
-          contacts: store.session.contacts
-        }),
-        success: function(response) {
-          console.log('UPDATED USER');
-        },
-        error: function(response) {
-          console.log('ERROR: ', response)
-        }
-      })
+      // $.ajax({
+      //   type: 'PUT',
+      //   url: `https://baas.kinvey.com/user/${settings.appKey}/${store.session._id}`,
+      //   contentType: 'application/json',
+      //   data: JSON.stringify({
+      //     contacts: store.session.contacts
+      //   }),
+      //   success: function(response) {
+      //     console.log('UPDATED USER');
+      //   },
+      //   error: function(response) {
+      //     console.log('ERROR: ', response)
+      //   }
+      // })
     } else {
       throw new Error('You must give your contact a name')
     }

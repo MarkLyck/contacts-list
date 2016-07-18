@@ -1,0 +1,22 @@
+@import "../../node_modules/normalize-scss/sass/normalize/import-now";
+@import "variables";
+@import "header";
+@import "footer";
+@import "login";
+@import "contacts";
+
+.modal-container {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  background: rgba(0,0,0,0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .modal {
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+  }
+}
