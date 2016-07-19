@@ -35,7 +35,7 @@ function renderContactForm() {
     console.log('CLICKED CREATE');
     if ($cName.val() !== '') {
 
-      contacts.create({
+      store.contacts.data.create({
         name: $cName.val(),
         nick: $cNick.val(),
         email: $cEmail.val(),
