@@ -10,9 +10,9 @@ function renderLogin() {
     <div class="modal-container">
 			<div class="login-modal modal">
 				<h3>Login</h3>
-				<input id="login-username" type="text" name="name" placeholder="username">
-				<input id="login-pw" type="password" name="name" placeholder="Password">
-				<button id="login-btn" type="button" name="button">Login</button>
+				<label> <i class="fa fa-user" aria-hidden="true"></i> <input id="login-username" type="text" name="name" placeholder="username"></label>
+				<label> <i class="fa fa-unlock-alt" aria-hidden="true"></i> <input id="login-pw" type="password" name="name" placeholder="Password"></label>
+				<button id="login-btn" type="button" name="button"><i class="fa fa-sign-in" aria-hidden="true"></i> Login</button>
 
         <button id="goto-signup" type="button" name="button">or Signup</button>
 			</div>
@@ -38,8 +38,6 @@ function renderLogin() {
           password: password,
         }),
         success: function(response) {
-          console.log('YOU LOGGED IN');
-          console.log(response);
           store.session.username = username
           store.session.authtoken = response._kmd.authtoken;
           store.session.contacts = response.contacts

@@ -2,4 +2,47 @@
   list-style: none;
   margin: 0;
   margin-top: 75px;
+  margin-bottom: 60px;
+  padding: 0;
+  height: calc(100vh - 60px - 75px);
+  h3, h4 {
+    margin: 0;
+  }
+  li {
+    background: $contact-color;
+    height: 10%;
+    display: flex;
+    flex-direction: column;
+    transition: height 500ms;
+    border-bottom: 2px solid darken($contact-color, 5%);
+    box-sizing: border-box;
+    h3 {
+      padding: 20px;
+      background: $contact-color;
+      width: 100%;
+      box-sizing: border-box;
+    }
+    .dropdown {
+      height: 0;
+      opacity: 0;
+      transition: 500ms;
+      h4 {
+        background:  darken($contact-color, 5%);
+        height: 0;
+        box-sizing: border-box;
+        transition: 500ms;
+      }
+    }
+  }
+  .show-dropdown {
+    height: calc(10% + 170px);
+    .dropdown {
+      height: 100%;
+      opacity: 1;
+      h4 {
+        height: 60px;
+        padding: 20px;
+      }
+    }
+  }
 }

@@ -25,5 +25,5 @@ if (sessionStorage.session) {
 Backbone.history.start()
 
 if (!store.session.username) {
-  router.navigate('login', {trigger:true})
+  // router.navigate('login', {trigger:true})
 }

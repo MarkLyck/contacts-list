@@ -405,6 +405,32 @@ header {
     background: #1498ec;
     height: 100%;
     color: #fff; }
+    header nav button {
+      margin: 0;
+      box-sizing: border-box; }
+    header nav .wrapper button {
+      height: 100%;
+      width: 75px; }
+    header nav .wrapper #new-contact-btn {
+      background: #30cf9a; }
+    header nav .wrapper #search-btn {
+      margin-left: -4px; }
+    header nav .wrapper #search-bar {
+      position: absolute;
+      border: none;
+      height: 100%;
+      transition: width 500ms;
+      top: 0;
+      left: calc(75px + 75px);
+      padding: 0;
+      box-sizing: border-box;
+      width: 0;
+      background: #f2f2f2; }
+    header nav .wrapper #logout-btn {
+      width: 110px; }
+    header nav .searching #search-bar {
+      padding-left: 20px;
+      width: calc(100% - 75px - 75px - 110px); }
 
 footer {
   width: 100%;
@@ -413,10 +439,72 @@ footer {
   bottom: 0;
   height: 60px; }
 
+.login-modal {
+  width: 60%; }
+  .login-modal h3 {
+    padding: 40px;
+    background: #f2f2f2;
+    margin: 0; }
+  .login-modal label {
+    display: flex; }
+    .login-modal label i {
+      color: #1498ec;
+      height: 60px;
+      width: 60px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      box-sizing: border-box; }
+    .login-modal label input {
+      padding: 20px;
+      height: 60px;
+      border: none;
+      width: calc(100% - 60px);
+      box-sizing: border-box; }
+  .login-modal #goto-signup {
+    background: gray; }
+    .login-modal #goto-signup:hover {
+      background: #0f7abe; }
+
 #contact-list {
   list-style: none;
   margin: 0;
-  margin-top: 75px; }
+  margin-top: 75px;
+  margin-bottom: 60px;
+  padding: 0;
+  height: calc(100vh - 60px - 75px); }
+  #contact-list h3, #contact-list h4 {
+    margin: 0; }
+  #contact-list li {
+    background: #fff;
+    height: 10%;
+    display: flex;
+    flex-direction: column;
+    transition: height 500ms;
+    border-bottom: 2px solid #f2f2f2;
+    box-sizing: border-box; }
+    #contact-list li h3 {
+      padding: 20px;
+      background: #fff;
+      width: 100%;
+      box-sizing: border-box; }
+    #contact-list li .dropdown {
+      height: 0;
+      opacity: 0;
+      transition: 500ms; }
+      #contact-list li .dropdown h4 {
+        background: #f2f2f2;
+        height: 0;
+        box-sizing: border-box;
+        transition: 500ms; }
+  #contact-list .show-dropdown {
+    height: calc(10% + 170px); }
+    #contact-list .show-dropdown .dropdown {
+      height: 100%;
+      opacity: 1; }
+      #contact-list .show-dropdown .dropdown h4 {
+        height: 60px;
+        padding: 20px; }
 
 body {
   font-weight: 100; }
@@ -427,7 +515,8 @@ button, input {
 button {
   border: none;
   color: #fff;
-  background: #1189d5; }
+  background: #1189d5;
+  padding: 20px; }
   button:hover {
     background: #0f7abe;
     cursor: pointer; }

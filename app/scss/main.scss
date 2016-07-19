@@ -16,6 +16,7 @@ button {
   border: none;
   color: #fff;
   background: darken($primary-color, 5%);
+  padding: 20px;
   &:hover {
     background: darken($primary-color, 10%);
     cursor: pointer;

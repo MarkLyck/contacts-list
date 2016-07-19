@@ -9,5 +9,44 @@ header {
     background: $primary-color;
     height: 100%;
     color: #fff;
+    button {
+      margin: 0;
+      box-sizing: border-box;
+    }
+    .wrapper {
+      button {
+        height: 100%;
+        width: 75px;
+      }
+      #new-contact-btn {
+        background: #30cf9a;
+      }
+      #search-btn {
+        margin-left: -4px;
+      }
+      #search-bar {
+        position: absolute;
+        border: none;
+        height: 100%;
+        transition: width 500ms;
+        top: 0;
+        left: calc(75px + 75px);
+        padding: 0;
+        box-sizing: border-box;
+        width: 0;
+        background: darken($contact-color,5%);
+      }
+      #logout-btn {
+        width: 110px;
+      }
+    }
+    .searching {
+      #search-bar {
+        padding-left: 20px;
+        width: calc(100% - 75px - 75px - 110px);
+        // left: calc(75px + 75px)
+      }
+    }
+
   }
 }

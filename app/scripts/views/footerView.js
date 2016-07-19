@@ -8,11 +8,8 @@ function renderFooter() {
     <footer></footer>
   `)
 
-  console.log(store.contacts.refsLoaded);
-  console.log(store.contacts.refsTotal);
   if (store.contacts.refsTotal > store.contacts.refsLoaded+10) {
     let $nextBtn = $(`<button id="next-page" type="button" name="button">Next</button>`)
-    console.log('theres more contacts to load');
     $footer.append($nextBtn)
     $nextBtn.on('click', function() {
       let hashArray = location.hash.split('contacts/')

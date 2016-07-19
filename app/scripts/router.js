@@ -25,44 +25,38 @@ const Router = Backbone.Router.extend({
     '/*'            : 'login'
   },
   login: function() {
-    console.log('store session: ', store.session);
     if (store.session.authtoken) {
-      console.log('ALREADY HAVE USER!');
       router.navigate('contacts', {trigger:true})
     } else {
-      console.log('LOGIN')
       let $loginModal = renderLogin()
       $container.empty().append($loginModal)
     }
   },
   signup: function() {
-    console.log('SIGNUP')
     let $signupModal = renderSignup()
     $container.empty().append($signupModal)
   },
   contacts: function(page) {
-    console.log('RENDER CONTACTS');
-
+    console.log('testing');
     if (page) {
       settings.pagination = `?query={}&limit=10&skip=${page*10}`
       store.contacts.refsLoaded = page*10
     } else {
-      location.hash = '#contacts/0'
+      this.navigate('contacts/0')
     }
 
     let $header = renderHeader()
-    // let $footer = renderFooter()
     $container.empty().append($header)
+
 
     store.contacts.data.fetch({
       url: `https://baas.kinvey.com/appdata/${settings.appKey}/contacts/${settings.pagination}`,
       success: function() {
-        let $contacts = renderContacts(page)
+        let $contacts = renderContacts()
         $container.append($contacts)
     }})
   },
   newContact: function() {
-    console.log('RENDER NEW CONTACT FORM');
     let $contactForm = renderContactForm()
     $container.append($contactForm)
   }
