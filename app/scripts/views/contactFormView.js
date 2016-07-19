@@ -10,14 +10,21 @@ function renderContactForm() {
     <div class="modal-container">
       <div class="new-contact-modal modal">
         <h3>New contact</h3>
-        <input id="new-contact-name" type="text" name="name" placeholder="Full Name">
-        <input id="new-contact-nickname" type="text" name="name" placeholder="Nickname">
-        <input id="new-contact-email" type="text" name="name" placeholder="Email Address">
-        <input id="new-contact-number" type="text" name="name" placeholder="Phone Number">
-        <button id="create-contact-btn" type="button" name="button">Create contact</button>
+        <label><i class="fa fa-user" aria-hidden="true"></i><input id="new-contact-name" type="text" name="name" placeholder="Full Name"></label>
+        <label><i class="fa fa-user-secret" aria-hidden="true"></i><input id="new-contact-nickname" type="text" name="name" placeholder="Nickname"></label>
+        <label><i class="fa fa-envelope" aria-hidden="true"></i><input id="new-contact-email" type="text" name="name" placeholder="Email Address"></label>
+        <label><i class="fa fa-phone" aria-hidden="true"></i><input id="new-contact-number" type="text" name="name" placeholder="Phone Number"></label>
+        <button id="create-contact-btn" type="button" name="button"><i class="fa fa-user-plus" aria-hidden="true"></i> Create contact</button>
       </div>
     </div>
   `)
+
+  $contactForm.on('click', function(e) {
+    if ($(e.target).hasClass('modal-container')) {
+      router.navigate('contacts')
+      $contactForm.remove()
+    }
+  })
 
   let $cName = $contactForm.find('#new-contact-name')
   let $cNick = $contactForm.find('#new-contact-nickname')
