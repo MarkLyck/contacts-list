@@ -448,15 +448,15 @@ footer {
     position: absolute;
     left: 0; }
 
-.login-modal {
+.login-modal, .signup-modal {
   width: 60%; }
-  .login-modal h3 {
+  .login-modal h3, .signup-modal h3 {
     padding: 40px;
     background: #f2f2f2;
     margin: 0; }
-  .login-modal label {
+  .login-modal label, .signup-modal label {
     display: flex; }
-    .login-modal label i {
+    .login-modal label i, .signup-modal label i {
       color: #1498ec;
       height: 60px;
       width: 60px;
@@ -464,15 +464,19 @@ footer {
       justify-content: center;
       align-items: center;
       box-sizing: border-box; }
-    .login-modal label input {
-      padding: 20px;
-      height: 60px;
-      border: none;
-      width: calc(100% - 60px);
-      box-sizing: border-box; }
-  .login-modal #goto-signup {
+  .login-modal input, .signup-modal input {
+    padding: 20px;
+    height: 60px;
+    border: none;
+    width: calc(100% - 60px);
+    box-sizing: border-box; }
+  .login-modal #goto-signup, .signup-modal #goto-signup {
     background: gray; }
-    .login-modal #goto-signup:hover {
+    .login-modal #goto-signup:hover, .signup-modal #goto-signup:hover {
+      background: #0f7abe; }
+  .login-modal #goto-login, .signup-modal #goto-login {
+    background: gray; }
+    .login-modal #goto-login:hover, .signup-modal #goto-login:hover {
       background: #0f7abe; }
 
 #contact-list {
