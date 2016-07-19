@@ -437,7 +437,16 @@ footer {
   background: #1498ec;
   position: fixed;
   bottom: 0;
-  height: 60px; }
+  height: 60px;
+  display: flex; }
+  footer button {
+    width: 50%; }
+  footer #next-page {
+    position: absolute;
+    right: 0; }
+  footer #prev-page {
+    position: absolute;
+    left: 0; }
 
 .login-modal {
   width: 60%; }
