@@ -4,4 +4,16 @@ footer {
   position: fixed;
   bottom: 0;
   height: 60px;
+  display: flex;
+  button {
+    width: 50%;
+  }
+  #next-page {
+    position: absolute;
+    right: 0;
+  }
+  #prev-page {
+    position: absolute;
+    left: 0;
+  }
 }

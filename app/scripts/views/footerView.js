@@ -9,7 +9,7 @@ function renderFooter() {
   `)
 
   if (store.contacts.refsTotal > store.contacts.refsLoaded+10) {
-    let $nextBtn = $(`<button id="next-page" type="button" name="button">Next</button>`)
+    let $nextBtn = $(`<button id="next-page" type="button" name="button">Next <i class="fa fa-angle-right" aria-hidden="true"></i></button>`)
     $footer.append($nextBtn)
     $nextBtn.on('click', function() {
       let hashArray = location.hash.split('contacts/')
@@ -21,7 +21,7 @@ function renderFooter() {
 
   // If there's a previous page to show.
   if (store.contacts.refsLoaded >= 10) {
-    let $prevBtn = $(`<button id="prev-page" type="button" name="button">Prev</button>`)
+    let $prevBtn = $(`<button id="prev-page" type="button" name="button"><i class="fa fa-angle-left" aria-hidden="true"></i> Prev</button>`)
     $footer.prepend($prevBtn)
     $prevBtn.on('click', function() {
       let hashArray = location.hash.split('contacts/')
