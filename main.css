@@ -506,6 +506,29 @@ footer {
         height: 60px;
         padding: 20px; }
 
+.new-contact-modal {
+  width: 60%; }
+  .new-contact-modal h3 {
+    padding: 40px;
+    background: #f2f2f2;
+    margin: 0; }
+  .new-contact-modal label {
+    display: flex; }
+    .new-contact-modal label i {
+      color: #1498ec;
+      height: 60px;
+      width: 60px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      box-sizing: border-box; }
+    .new-contact-modal label input {
+      padding: 20px;
+      height: 60px;
+      border: none;
+      width: calc(100% - 60px);
+      box-sizing: border-box; }
+
 body {
   font-weight: 100; }
 
