@@ -1,4 +1,4 @@
-.login-modal {
+.login-modal, .signup-modal {
   width: 60%;
   h3 {
     padding: 40px;
@@ -16,15 +16,22 @@
       align-items: center;
       box-sizing: border-box;
     }
-    input {
-      padding: 20px;
-      height: 60px;
-      border: none;
-      width: calc(100% - 60px);
-      box-sizing: border-box;
-    }
+
+  }
+  input {
+    padding: 20px;
+    height: 60px;
+    border: none;
+    width: calc(100% - 60px);
+    box-sizing: border-box;
   }
   #goto-signup {
+    background: darken($contact-color, 50%);
+    &:hover {
+      background: darken($primary-color, 10%);
+    }
+  }
+  #goto-login {
     background: darken($contact-color, 50%);
     &:hover {
       background: darken($primary-color, 10%);

@@ -7,13 +7,15 @@ import store from '../store'
 
 function renderSignup() {
   let $signup = $(`
-    <div class="signup-modal modal">
-      <h3>Sign Up</h3>
-      <input id="signup-username" type="text" name="name" placeholder="User Name">
-      <input id="signup-pw" type="password" name="name" placeholder="Password">
-      <button id="signup-btn" type="button" name="button">Sign up</button>
+    <div class="modal-container">
+      <div class="signup-modal modal">
+        <h3>Sign Up</h3>
+        <input id="signup-username" type="text" name="name" placeholder="User Name">
+        <input id="signup-pw" type="password" name="name" placeholder="Password">
+        <button id="signup-btn" type="button" name="button">Sign up</button>
 
-      <button id="goto-login" type="button" name="button">or Login</button>
+        <button id="goto-login" type="button" name="button">or Login</button>
+      </div>
     </div>
   `)
 
